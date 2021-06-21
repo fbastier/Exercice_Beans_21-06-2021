@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!--    // Constructeur : Avec ordre-->
+    <bean id="houseBean1" class="com.example.springapp.Model.House">
+        <constructor-arg value="Euratechnologies, Lille 59000" type="java.lang.String"/>
+        <constructor-arg value="30" type="int"/>
+        <constructor-arg type="int"><value>14</value></constructor-arg>
+        <constructor-arg value="Myrthille" type="java.lang.String"></constructor-arg>
+    </bean>
+
+<!--    // Constructeur : Sans respecter l'ordre-->
+    <bean id="houseBean2" class="com.example.springapp.Model.House">
+        <constructor-arg value="Horace" type="java.lang.String" index="3">
+        </constructor-arg>
+        <constructor-arg value="40" index="1" type="int"/>
+        <constructor-arg value="Francetechnologies, Brest 29000" type="java.lang.String"
+                         index="0"/>
+        <constructor-arg type="int" index="2">
+            <value>3</value>
+        </constructor-arg>
+    </bean>
+
+<!--    // Modificateur-->
+    <bean id="Compagny" class="com.example.springapp.Model.Compagny">
+        <property name="compagnyName" value="SAtruc"></property>
+        <property name="dev1" ref="Developper1"></property>
+        <property name="dev2" ref="Developper2"></property>
+    </bean>
+
+    <bean id="Developper1" class="com.example.springapp.Model.Developper">
+        <property name="name" value="Mickael"></property>
+        <property name="nbYear" value="4"></property>
+    </bean>
+
+    <bean id="Developper2" class="com.example.springapp.Model.Developper">
+        <property name="name" value="Francois"></property>
+        <property name="nbYear" value="0"></property>
+    </bean>
+
+</beans>
