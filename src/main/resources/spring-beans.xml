@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+    <context:annotation-config/>
 
 <!--    // Constructeur : Avec ordre-->
     <bean id="houseBean1" class="com.example.springapp.Model.House">
@@ -71,7 +74,18 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
     </bean>
 
 
-    <!-- injection avec autowiring-->
+    <!-- injection avec @autowired-->
+
+    <bean id="person" class="com.example.springapp.Model.Person">
+        <property name="firstname" value="Toto" />
+        <property name="lastname" value="Durand" />
+        <property name="email" value="toto@spring.com" />
+    </bean>
+
+    <bean id="anotherCustomer" class="com.example.springapp.Model.AnotherCustomer">
+        <constructor-arg type="java.lang.String" value="travailler"/>
+        <constructor-arg type="int" value="4" />
+    </bean>
 
 
 

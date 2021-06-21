@@ -1,6 +1,7 @@
 package com.example.springapp;
 
 import com.example.springapp.Model.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -71,5 +72,12 @@ public class ProjetDemoApplication {
         System.out.println(panda.getKungFu().getName());
         System.out.println("");
 
+        // avec @Autowired
+        AnotherCustomer ac = (AnotherCustomer) cxt.getBean("anotherCustomer");
+        System.out.println(ac);
+
+
         }
+
+
 }
