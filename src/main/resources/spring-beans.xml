@@ -49,4 +49,30 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!-- prototype -->
     <bean id="service1" class="com.example.springapp.Model.Service" scope="prototype"/>
 
+
+    <!-- Définition du bean Adress avec comme id adress -->
+    <bean id="monAdresse" class="com.example.springapp.Model.Adresse">
+        <property name="fullAdress" value="Gare Lille Flandres 59000, Batiment A, Etage 4"/>
+    </bean>
+    <!-- Définition du bean client -->
+    <!-- injection automatique de la prop Adresse du client -->
+    <bean id="customer" class="com.example.springapp.Model.Customer" autowire="byName">
+        <property name="nom" value="Agence de Formation"/>
+    </bean>
+
+
+    <!-- injection automatique par constructeur -->
+    <!-- Panda -->
+    <bean id="panda" class="com.example.springapp.Model.Panda" autowire="constructor">
+    </bean>
+    <!-- KungFu -->
+    <bean id="kungFu" class="com.example.springapp.Model.KungFu">
+        <property name="name" value="PetitPanda" />
+    </bean>
+
+
+    <!-- injection avec autowiring-->
+
+
+
 </beans>

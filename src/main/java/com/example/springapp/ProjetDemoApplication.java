@@ -1,9 +1,6 @@
 package com.example.springapp;
 
-import com.example.springapp.Model.Compagny;
-import com.example.springapp.Model.Developper;
-import com.example.springapp.Model.House;
-import com.example.springapp.Model.Service;
+import com.example.springapp.Model.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -63,7 +60,16 @@ public class ProjetDemoApplication {
         Service service3 = (Service) cxt.getBean("service1");
         System.out.println(service3.getMessage());
 
+        // Autowiring par XML
+        System.out.println("Autowiring exemple 1");
+        Customer customer = (Customer) cxt.getBean("customer");
+        System.out.println(customer);
+        System.out.println("");
 
+        System.out.println("Autowiring exemple 2");
+        Panda panda = (Panda) cxt.getBean("panda");
+        System.out.println(panda.getKungFu().getName());
+        System.out.println("");
 
-    }
+        }
 }
