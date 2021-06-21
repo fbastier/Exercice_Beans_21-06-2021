@@ -42,4 +42,11 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
         <property name="nbYear" value="0"></property>
     </bean>
 
+    <!--    // Pour modification du scope-->
+    <!-- Singleton explicite -->
+    <bean id="service" class="com.example.springapp.Model.Service" scope="singleton"/>
+
+    <!-- prototype -->
+    <bean id="service1" class="com.example.springapp.Model.Service" scope="prototype"/>
+
 </beans>
