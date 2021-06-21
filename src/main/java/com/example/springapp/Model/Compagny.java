@@ -5,14 +5,13 @@ public class Compagny {
     private Developper dev1;
     private Developper dev2;
 
-    public Compagny(String compagnyName, Developper dev1, Developper dev2) {
+/*    public Compagny(String compagnyName, Developper dev1, Developper dev2) {
         this.compagnyName = compagnyName;
         this.dev1 = dev1;
         this.dev2 = dev2;
-    }
+    }*/
 
     public Compagny() {
-
     }
 
     public String getCompagnyName() {

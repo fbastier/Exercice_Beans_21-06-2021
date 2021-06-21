@@ -4,13 +4,12 @@ public class Developper {
     private String name;
     private int nbYear;
 
-    public Developper(String name, int nbYear) {
-        this.name = name;
-        this.nbYear = nbYear;
-    }
+//    public Developper(String name, int nbYear) {
+//        this.name = name;
+//        this.nbYear = nbYear;
+//    }
 
     public Developper() {
-
     }
 
     public String getName() {
