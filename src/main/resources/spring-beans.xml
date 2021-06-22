@@ -1,3 +1,4 @@
+<!--
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
@@ -7,17 +8,18 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-2.5.xsd">
     <context:annotation-config/>
+&lt;!&ndash;    <context:component-scan base-package="com.example.springapp";&ndash;&gt;
 
-<!--    // Constructeur : Avec ordre-->
-    <bean id="houseBean1" class="com.example.springapp.Model.House">
+&lt;!&ndash;    // Constructeur : Avec ordre&ndash;&gt;
+    <bean id="houseBean1" class="com.example.springapp.model.House">
         <constructor-arg value="Euratechnologies, Lille 59000" type="java.lang.String"/>
         <constructor-arg value="30" type="int"/>
         <constructor-arg type="int"><value>14</value></constructor-arg>
         <constructor-arg value="Myrthille" type="java.lang.String"></constructor-arg>
     </bean>
 
-<!--    // Constructeur : Sans respecter l'ordre-->
-    <bean id="houseBean2" class="com.example.springapp.Model.House">
+&lt;!&ndash;    // Constructeur : Sans respecter l'ordre&ndash;&gt;
+    <bean id="houseBean2" class="com.example.springapp.model.House">
         <constructor-arg value="Horace" type="java.lang.String" index="3">
         </constructor-arg>
         <constructor-arg value="40" index="1" type="int"/>
@@ -28,65 +30,63 @@
         </constructor-arg>
     </bean>
 
-<!--    // Modificateur-->
-    <bean id="Compagny" class="com.example.springapp.Model.Compagny">
+&lt;!&ndash;    // Modificateur&ndash;&gt;
+    <bean id="Compagny" class="com.example.springapp.model.Compagny">
         <property name="compagnyName" value="SAtruc"></property>
         <property name="dev1" ref="Developper1"></property>
         <property name="dev2" ref="Developper2"></property>
     </bean>
 
-    <bean id="Developper1" class="com.example.springapp.Model.Developper">
+    <bean id="Developper1" class="com.example.springapp.model.Developper">
         <property name="name" value="Mickael"></property>
         <property name="nbYear" value="4"></property>
     </bean>
 
-    <bean id="Developper2" class="com.example.springapp.Model.Developper">
+    <bean id="Developper2" class="com.example.springapp.model.Developper">
         <property name="name" value="Francois"></property>
         <property name="nbYear" value="0"></property>
     </bean>
 
-    <!--    // Pour modification du scope-->
-    <!-- Singleton explicite -->
-    <bean id="service" class="com.example.springapp.Model.Service" scope="singleton"/>
+    &lt;!&ndash;    // Pour modification du scope&ndash;&gt;
+    &lt;!&ndash; Singleton explicite &ndash;&gt;
+    <bean id="service" class="com.example.springapp.model.Service" scope="singleton"/>
 
-    <!-- prototype -->
-    <bean id="service1" class="com.example.springapp.Model.Service" scope="prototype"/>
+    &lt;!&ndash; prototype &ndash;&gt;
+    <bean id="service1" class="com.example.springapp.model.Service" scope="prototype"/>
 
 
-    <!-- Définition du bean Adress avec comme id adress -->
-    <bean id="monAdresse" class="com.example.springapp.Model.Adresse">
+    &lt;!&ndash; Définition du bean Adress avec comme id adress &ndash;&gt;
+    <bean id="monAdresse" class="com.example.springapp.model.Adresse">
         <property name="fullAdress" value="Gare Lille Flandres 59000, Batiment A, Etage 4"/>
     </bean>
-    <!-- Définition du bean client -->
-    <!-- injection automatique de la prop Adresse du client -->
-    <bean id="customer" class="com.example.springapp.Model.Customer" autowire="byName">
+    &lt;!&ndash; Définition du bean client &ndash;&gt;
+    &lt;!&ndash; injection automatique de la prop Adresse du client &ndash;&gt;
+    <bean id="customer" class="com.example.springapp.model.Customer" autowire="byName">
         <property name="nom" value="Agence de Formation"/>
     </bean>
 
 
-    <!-- injection automatique par constructeur -->
-    <!-- Panda -->
-    <bean id="panda" class="com.example.springapp.Model.Panda" autowire="constructor">
+    &lt;!&ndash; injection automatique par constructeur &ndash;&gt;
+    &lt;!&ndash; Panda &ndash;&gt;
+    <bean id="panda" class="com.example.springapp.model.Panda" autowire="constructor">
     </bean>
-    <!-- KungFu -->
-    <bean id="kungFu" class="com.example.springapp.Model.KungFu">
+    &lt;!&ndash; KungFu &ndash;&gt;
+    <bean id="kungFu" class="com.example.springapp.model.KungFu">
         <property name="name" value="PetitPanda" />
     </bean>
 
 
-    <!-- injection avec @autowired-->
+    &lt;!&ndash; injection avec @autowired&ndash;&gt;
 
-    <bean id="person" class="com.example.springapp.Model.Person">
+    <bean id="person" class="com.example.springapp.model.Person">
         <property name="firstname" value="Toto" />
         <property name="lastname" value="Durand" />
         <property name="email" value="toto@spring.com" />
     </bean>
 
-    <bean id="anotherCustomer" class="com.example.springapp.Model.AnotherCustomer">
+    <bean id="anotherCustomer" class="com.example.springapp.model.AnotherCustomer">
         <constructor-arg type="java.lang.String" value="travailler"/>
         <constructor-arg type="int" value="4" />
     </bean>
 
-
-
-</beans>
+</beans>-->

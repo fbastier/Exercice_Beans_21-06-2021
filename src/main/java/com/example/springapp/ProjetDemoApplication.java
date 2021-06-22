@@ -1,19 +1,18 @@
 package com.example.springapp;
 
-import com.example.springapp.Model.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.springapp.model.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.w3c.dom.ls.LSOutput;
 
 @SpringBootApplication
 public class ProjetDemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProjetDemoApplication.class, args);
-        ApplicationContext cxt = new ClassPathXmlApplicationContext("spring-beans.xml");
+        ApplicationContext cxt = SpringApplication.run(ProjetDemoApplication.class, args);
+
+/*        ApplicationContext cxt = new ClassPathXmlApplicationContext("spring-beans.xml");
 
         // Injection par Constructeur
         System.out.println("Injection par constructeur");
@@ -73,9 +72,15 @@ public class ProjetDemoApplication {
         System.out.println("");
 
         // avec @Autowired
+        System.out.println("@Autowired");
+        AnotherCustomer ac = (AnotherCustomer) cxt.getBean("anotherCustomer");
+        System.out.println(ac);*/
+
+        // avec @Autowired + @Component dans les classes : suppression du xml
+        System.out.println("@Autowired + @Component dans les classes : suppression du xml");
+
         AnotherCustomer ac = (AnotherCustomer) cxt.getBean("anotherCustomer");
         System.out.println(ac);
-
 
         }
 

@@ -1,4 +1,4 @@
-package com.example.springapp.Model;
+package com.example.springapp.model;
 
 public class Service {
 

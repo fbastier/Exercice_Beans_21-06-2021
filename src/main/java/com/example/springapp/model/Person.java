@@ -1,13 +1,17 @@
-package com.example.springapp.Model;
+package com.example.springapp.model;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 
-
+@Component("Person")
 public class Person implements Serializable {
+    @Value("Jean")
     private String firstname;
+    @Value(("Cocteau"))
     private String lastname;
+    @Value("jean@cocteau.fr")
     private String email;
 
     public Person() {

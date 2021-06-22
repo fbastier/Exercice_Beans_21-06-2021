@@ -1,20 +1,23 @@
-package com.example.springapp.Model;
+package com.example.springapp.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 
-
+@Component("anotherCustomer")
 public class AnotherCustomer implements Serializable {
+    @Value("travailler")
     private String action;
+    @Value("4")
     private int type;
+    @Autowired
     private Person person;
 
     public AnotherCustomer() {
     }
 
-    @Autowired
     public AnotherCustomer(String action, int type, Person person) {
         this.action = action;
         this.type = type;
